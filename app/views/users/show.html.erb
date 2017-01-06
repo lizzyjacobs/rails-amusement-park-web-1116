@@ -1,0 +1,14 @@
+<h1>Welcome back to the theme park!</h1>
+<%= flash[:notice] %>
+
+<% if @user.admin %>
+  <%= "ADMIN" %></br>
+<% end %>
+
+Name: <%= @user.name %></br>
+Height: <%= @user.height %></br>
+Mood: <%= @user.mood %></br>
+Tickets: <%= @user.tickets %></br>
+
+<%= link_to "Log Out", logout_path %>
+<%= link_to "See attractions", attractions_path %>

@@ -12,10 +12,8 @@ class User < ActiveRecord::Base
   # validates :tickets, presence: true
 
   def mood
-    if self.nausea > self.happiness
-      "sad"
-    elsif self.happiness > self.nausea
-      "happy"
+    unless nausea.blank? && happiness.blank?
+      nausea > happiness ? "sad" : "happy"
     end
   end
 
