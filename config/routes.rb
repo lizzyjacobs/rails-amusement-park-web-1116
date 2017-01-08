@@ -12,8 +12,13 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
 
   get '/attractions', to: 'attractions#index', as: 'attractions'
+  get '/attractions/new', to: 'attractions#new'
   get '/attractions/:id', to: 'attractions#show', as: 'attraction'
-  post '/users/:id/update', to: 'users#update', as:'update_user'
+  post '/users/:id/update', to: 'users#update', as: 'update_user'
+
+  post '/attractions', to: 'attractions#create'
+  get '/attractions/:id/edit', to: 'attractions#edit', as: 'edit'
+  patch '/attractions/:id', to: 'attractions#update'
 
 
   # get '/new', to: 'users#new', as: 'signup'

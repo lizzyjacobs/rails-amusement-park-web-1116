@@ -1,7 +1,7 @@
 <h1>Welcome back to the theme park!</h1>
 <%= flash[:notice] %>
 
-<% if @user.admin %>
+<% if current_user.admin %>
   <%= "ADMIN" %></br>
 <% end %>
 

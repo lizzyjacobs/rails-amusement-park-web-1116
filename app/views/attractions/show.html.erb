@@ -1,4 +1,10 @@
 <h1><%= @attraction.name %></h1>
 
 
-<%= button_to "Go on this ride", update_user_path , params: {attraction_id: @attraction.id} %>
+<% if current_user.admin %>
+  <%= link_to "Show #{@attraction.name}", edit_path(@attraction) %>
+  <%= link_to "Edit Attraction", edit_path(@attraction) %>
+
+<% else %>
+  <%= button_to "Go on this ride", update_user_path , params: {attraction_id: @attraction.id} %>
+<% end %>
